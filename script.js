@@ -440,6 +440,19 @@ function initMisc() {
     () => fab.classList.toggle("show", window.scrollY > 500),
     { passive: true }
   );
+
+  const ringCircle = $(".fab-ring circle");
+  if (ringCircle) {
+    const C = 2 * Math.PI * 23;
+    ringCircle.style.strokeDasharray = String(C);
+    const setRing = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+      ringCircle.style.strokeDashoffset = String(C * (1 - p));
+    };
+    window.addEventListener("scroll", setRing, { passive: true });
+    setRing();
+  }
   fab.addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" })
   );

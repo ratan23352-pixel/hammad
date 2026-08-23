@@ -740,7 +740,7 @@ html.dark .contact-form .field textarea { color: var(--ink); }
 .ws-4 { --wu: var(--cream); --wl: #f4eee1; }
 
 .section-head { position: relative; }
-.section-head > *:not(.sec-num):not(.note) { position: relative; z-index: 1; }
+.section-head > *:not(.sec-num):not(.note):not(.sticker) { position: relative; z-index: 1; }
 .sec-num {
   position: absolute; top: -3.2rem; right: -0.25rem; z-index: 0;
   font-family: var(--font-display); font-weight: 900;

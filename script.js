@@ -154,6 +154,53 @@ function initCursor() {
   });
 }
 
+const finePointer = matchMedia("(pointer: fine)").matches;
+
+function initMagnetic() {
+  if (!finePointer || reducedMotion) return;
+  $$(".btn, #themeBtn, .menu-btn, #tPrev, #tNext, #toTop").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      el.style.transition = "transform 0.07s linear";
+    });
+    el.addEventListener("mousemove", (e) => {
+      const r = el.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      el.style.transform = `translate(${dx * 0.28}px, ${dy * 0.28}px)`;
+    });
+    el.addEventListener("mouseleave", () => {
+      el.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
+      el.style.transform = "";
+    });
+  });
+}
+
+function initTilt() {
+  if (!finePointer || reducedMotion) return;
+  $$(".skill-card, .edu-card, .xp-card, .t-card").forEach((card) => {
+    card.classList.add("tiltable");
+    const glare = document.createElement("span");
+    glare.className = "tilt-glare";
+    glare.setAttribute("aria-hidden", "true");
+    card.appendChild(glare);
+    card.addEventListener("mouseenter", () => {
+      card.style.transition = "transform 0.09s linear";
+    });
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      card.style.setProperty("--mx", `${px * 100}%`);
+      card.style.setProperty("--my", `${py * 100}%`);
+      card.style.transform = `perspective(800px) rotateX(${((0.5 - py) * 9).toFixed(2)}deg) rotateY(${((px - 0.5) * 9).toFixed(2)}deg) translateY(-3px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transition = "transform 0.45s var(--ease-out)";
+      card.style.transform = "";
+    });
+  });
+}
+
 function initParallax() {
   if (!matchMedia("(pointer: fine)").matches || reducedMotion) return;
   const shapes = $$("[data-parallax]");
@@ -268,7 +315,17 @@ function initTheme() {
     try { localStorage.hammadTheme = dark ? "dark" : "light"; } catch (e) {}
   };
   apply(root.classList.contains("dark"));
-  btn.addEventListener("click", () => apply(!root.classList.contains("dark")));
+  btn.addEventListener("click", () => {
+    const dark = !root.classList.contains("dark");
+    if (!reducedMotion && document.startViewTransition) {
+      const r = btn.getBoundingClientRect();
+      root.style.setProperty("--vt-x", `${Math.round(r.left + r.width / 2)}px`);
+      root.style.setProperty("--vt-y", `${Math.round(r.top + r.height / 2)}px`);
+      document.startViewTransition(() => apply(dark));
+    } else {
+      apply(dark);
+    }
+  });
 }
 
 function splitHeadings() {
@@ -406,6 +463,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCycler();
   initTestimonials();
   initCursor();
+  initMagnetic();
+  initTilt();
   initParallax();
   initContactForm();
   initMisc();

@@ -525,18 +525,17 @@ body.loaded .load-anim { opacity: 1; transform: translateY(0); }
 
 .toast {
   position: fixed; bottom: 2rem; left: 50%; z-index: 1600;
-  transform: translate(-50%, 260%);
-  visibility: hidden; pointer-events: none;
+  transform: translate(-50%, 20px);
+  opacity: 0; visibility: hidden; pointer-events: none;
   background: var(--ink); color: var(--cream);
   border: 2px solid var(--pistachio); border-radius: 999px;
   padding: 0.75rem 1.6rem; font-weight: 700;
-  transition: transform 0.45s var(--ease-out), visibility 0.45s step-end;
+  transition: transform 0.45s var(--ease-out), opacity 0.45s ease, visibility 0.45s ease;
   max-width: min(90vw, 420px); text-align: center;
 }
 .toast.show {
   transform: translate(-50%, 0);
-  visibility: visible; pointer-events: auto;
-  transition: transform 0.45s var(--ease-out);
+  opacity: 1; visibility: visible; pointer-events: auto;
 }
 
 .reveal {

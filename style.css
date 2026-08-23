@@ -942,8 +942,8 @@ html { scrollbar-color: var(--pistachio-deep) var(--cream); scrollbar-width: thi
 }
 .photo-card:hover img { filter: sepia(0) saturate(1.05) contrast(1); }
 
-.sticker.s3 { top: 3.1rem; right: 13%; rotate: 5deg; animation-delay: 2.1s; }
-.sticker.s4 { top: -0.6rem; right: 7%; rotate: -6deg; animation-delay: 0.8s; }
+.sticker.s3 { top: auto; bottom: -1.1rem; right: 12%; rotate: 5deg; animation-delay: 2.1s; }
+.sticker.s4 { top: -1.6rem; right: 6%; rotate: -6deg; animation-delay: 0.8s; }
 .sticker { transition: rotate 0.25s var(--ease-out), scale 0.25s var(--ease-out); }
 .sticker:hover { scale: 1.07; rotate: 0deg; }
 

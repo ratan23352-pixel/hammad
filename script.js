@@ -462,6 +462,58 @@ function initMisc() {
   );
 }
 
+function initSecretSauce() {
+  let buffer = "";
+  let taps = 0;
+  let tapTimer;
+  let lastBurst = 0;
+
+  const burst = () => {
+    const now = Date.now();
+    if (now - lastBurst < 1500) return;
+    lastBurst = now;
+    showToast("secret sauce unlocked ✦");
+    if (reducedMotion) return;
+    const colors = ["#a9c47f", "#f0afc6", "#d8e3c4", "#fadbe6", "#2f3524"];
+    for (let i = 0; i < 50; i++) {
+      const piece = document.createElement("span");
+      piece.className = "confetti";
+      const size = 6 + Math.random() * 7;
+      piece.style.left = `${Math.random() * 100}vw`;
+      piece.style.width = `${size.toFixed(1)}px`;
+      piece.style.height = `${(i % 3 === 0 ? size : size * 1.6).toFixed(1)}px`;
+      piece.style.background = colors[i % colors.length];
+      if (i % 3 === 0) piece.classList.add("round");
+      piece.style.setProperty("--cx", `${((Math.random() - 0.5) * 30).toFixed(1)}vw`);
+      piece.style.setProperty("--cd", `${(2.4 + Math.random() * 1.6).toFixed(2)}s`);
+      piece.style.setProperty("--cr", `${Math.round(Math.random() * 900 - 450)}deg`);
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 4400);
+    }
+  };
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key.length !== 1) return;
+    buffer = (buffer + e.key.toLowerCase()).slice(-4);
+    if (buffer === "chef") {
+      buffer = "";
+      burst();
+    }
+  });
+
+  const star = $(".footer-brand .logo span");
+  if (!star) return;
+  star.addEventListener("click", () => {
+    clearTimeout(tapTimer);
+    taps += 1;
+    tapTimer = setTimeout(() => (taps = 0), 2000);
+    if (taps >= 5) {
+      taps = 0;
+      burst();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   if (window.lucide) lucide.createIcons();
   initTheme();
@@ -481,4 +533,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initParallax();
   initContactForm();
   initMisc();
+  initSecretSauce();
 });

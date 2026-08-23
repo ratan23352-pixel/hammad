@@ -954,3 +954,19 @@ html { scrollbar-color: var(--pistachio-deep) var(--cream); scrollbar-width: thi
 .fab-ring circle {
   fill: none; stroke: var(--pistachio-deep); stroke-width: 3; stroke-linecap: round;
 }
+
+.confetti {
+  position: fixed; top: -5vh; left: 0;
+  z-index: 2100; pointer-events: none;
+  border-radius: 2px;
+  animation: confetti-fall var(--cd, 3s) cubic-bezier(0.3, 0.4, 0.6, 1) forwards;
+}
+.confetti.round { border-radius: 50%; }
+@keyframes confetti-fall {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    transform: translate(var(--cx, 0), 112vh) rotate(var(--cr, 360deg));
+    opacity: 0;
+  }
+}

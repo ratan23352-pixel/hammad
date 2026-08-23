@@ -354,7 +354,14 @@ function initContactForm() {
       showToast("message sent — hammad will get back to you ✦");
       form.reset();
     } catch (err) {
-      showToast("couldn't send — email hammadakram058@gmail.com instead");
+      const data = new FormData(form);
+      const name = String(data.get("name") || "").trim();
+      const email = String(data.get("email") || "").trim();
+      const message = String(data.get("message") || "").trim();
+      const subject = encodeURIComponent(`portfolio inquiry from ${name}`);
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      window.location.href = `mailto:hammadakram058@gmail.com?subject=${subject}&body=${body}`;
+      showToast("couldn't send — opening your mail app instead ✦");
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = original;

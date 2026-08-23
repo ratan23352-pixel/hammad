@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hammad — culinary artist &amp; hospitality guy</title>
+  <meta name="description" content="Portfolio of Hammad — culinary artist and hospitality enthusiast sharing his experience through cooking and serving people." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23D9E5C5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%232F3524'%3EH%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Unbounded:wght@500;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script>try{if(localStorage.hammadTheme==="dark")document.documentElement.classList.add("dark")}catch(e){}</script>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader">
+    <i data-lucide="chef-hat"></i>
+    <p>hammad<span>✦</span></p>
+  </div>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <a class="skip-link" href="#about">skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#hero">h<span>✦</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="primary navigation">
+        <a href="#about" style="--i:1">about</a>
+        <a href="#experience" style="--i:2">experience</a>
+        <a href="#education" style="--i:3">education</a>
+        <a href="#skills" style="--i:4">skills</a>
+        <a href="#contact" class="btn btn-nav" style="--i:5">hire me</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="switch to dark mode" aria-pressed="false">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="shape shape-1" data-parallax="30"></div>
+      <div class="shape shape-2" data-parallax="-45"></div>
+      <span class="sticker s1" aria-hidden="true">est. 2021 ✦</span>
+      <span class="sticker s2" aria-hidden="true">fresh daily</span>
+
+      <div class="container hero-inner">
+        <p class="eyebrow load-anim" style="--d:.05s">✦ hi, my name is ✦</p>
+        <h1 class="load-anim" style="--d:.15s">
+          <span class="solid">hammad</span>
+          <span class="outline">cooks &amp;
+            <span class="cycler" id="cycler"><span class="cyc-word">serves.</span><span class="cyc-word">plates.</span><span class="cyc-word">hosts.</span></span>
+          </span>
+        </h1>
+        <p class="hero-sub load-anim" style="--d:.25s">
+          culinary artist &amp; hospitality enthusiast — i turn fresh ingredients
+          and warm service into moments people remember. fresh out of culinary
+          school and hungry for more.
+        </p>
+        <div class="hero-cta load-anim" style="--d:.35s">
+          <a href="#experience" class="btn btn-primary">peep my journey <i data-lucide="arrow-down-right"></i></a>
+          <a href="#contact" class="btn btn-ghost">get in touch</a>
+        </div>
+      </div>
+
+      <div class="badge-spin load-anim" style="--d:.5s" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="spin-svg">
+          <defs>
+            <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+          </defs>
+          <text><textPath href="#circlePath">open to work ✦ let's cook ✦ open to work ✦ let's cook ✦&#160;</textPath></text>
+        </svg>
+        <i data-lucide="chef-hat"></i>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>scroll for the good stuff</span>
+        <i data-lucide="arrow-down"></i>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>cooking ✦ serving ✦ hospitality ✦ culinary arts ✦ plating ✦ good vibes ✦&nbsp;</span>
+          <span>cooking ✦ serving ✦ hospitality ✦ culinary arts ✦ plating ✦ good vibes ✦&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-head reveal" data-reveal>
+          <span class="sec-num" aria-hidden="true">01</span>
+          <span class="tag">( about me )</span>
+          <h2>food is my<br /><em class="circled">love language<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+        </header>
+        <div class="about-grid">
+          <figure class="photo-card reveal reveal-zoom">
+            <span class="note note-photo" aria-hidden="true">this is me!
+              <svg viewBox="0 0 60 44" class="note-arrow"><path d="M50,4 C40,20 26,28 12,36"/><path d="M18,27 L11,37 L23,39"/></svg>
+            </span>
+            <img src="hammad.jpg" alt="hammad — chef in progress" />
+            <figcaption>hammad — chef in progress</figcaption>
+          </figure>
+          <div class="about-copy">
+            <p class="reveal" style="--d:.1s">
+              i'm hammad — a chef-in-the-making who believes food is the best way
+              to connect with people. from kneading dough to plating plates,
+              i'm all about sharing my experience through cooking and serving others.
+            </p>
+            <p class="reveal" style="--d:.18s">
+              trained in italian kitchens and classroom alike, i bring both craft
+              and warmth to every shift. hospitality isn't just my field of study —
+              it's how i move. warm plates, warmer welcomes.
+            </p>
+            <div class="chips reveal" style="--d:.26s">
+              <span class="chip"><i data-lucide="chef-hat"></i> culinary arts</span>
+              <span class="chip"><i data-lucide="concierge-bell"></i> hospitality</span>
+              <span class="chip"><i data-lucide="compass"></i> tourism mgmt</span>
+            </div>
+            <div class="stats reveal" id="stats" style="--d:.34s">
+              <div class="stat"><strong data-count="3">0</strong><span>kitchens worked</span></div>
+              <div class="stat"><strong data-count="2">0</strong><span>culinary certs</span></div>
+              <div class="stat"><strong>&#8734;</strong><span>plates to go</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-sep ws-1" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C120,55 240,5 360,25 C480,45 600,10 720,28 C840,46 960,12 1080,30 C1200,48 1320,16 1440,32 L1440,60 L0,60 Z"/></svg>
+    </div>
+
+    <div class="band band-pistachio">
+      <section id="experience" class="section container">
+        <header class="section-head reveal" data-reveal>
+          <span class="sec-num" aria-hidden="true">02</span>
+          <span class="tag">( where i've been )</span>
+          <h2>kitchen<br /><em class="circled">chronicles<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+          <p class="section-sub">three kitchens, countless lessons — here's the journey so far.</p>
+          <span class="note note-journey" aria-hidden="true">no skipped shifts</span>
+        </header>
+        <div class="timeline" id="timeline">
+          <article class="xp-card reveal reveal-left">
+            <div class="xp-top">
+              <span class="xp-icon"><i data-lucide="briefcase"></i></span>
+              <div class="xp-title">
+                <h3>kitchen helper</h3>
+                <p class="xp-place">neapo gastronomia</p>
+              </div>
+              <time>jun 2024</time>
+            </div>
+            <p class="xp-desc">
+              back at my home turf — prepping ingredients, supporting the line during
+              service, and soaking up every bit of real-kitchen wisdom one shift at a time.
+            </p>
+            <div class="chips">
+              <span class="chip chip-sm">prep</span>
+              <span class="chip chip-sm">mise en place</span>
+            </div>
+          </article>
+
+          <article class="xp-card reveal reveal-right">
+            <div class="xp-top">
+              <span class="xp-icon"><i data-lucide="flame"></i></span>
+              <div class="xp-title">
+                <h3>intern</h3>
+                <p class="xp-place">neapo gastronomia</p>
+              </div>
+              <time>jan – may 2024</time>
+            </div>
+            <p class="xp-desc">
+              months of hands-on training in a professional italian kitchen — from dough
+              to plating, learned the craft from chefs who don't play about food.
+            </p>
+            <div class="chips">
+              <span class="chip chip-sm">italian cuisine</span>
+              <span class="chip chip-sm">plating</span>
+            </div>
+          </article>
+
+          <article class="xp-card reveal reveal-left">
+            <div class="xp-top">
+              <span class="xp-icon"><i data-lucide="pizza"></i></span>
+              <div class="xp-title">
+                <h3>kitchen crew</h3>
+                <p class="xp-place">14 street pizza co.</p>
+              </div>
+              <time>mar – may 2022</time>
+            </div>
+            <p class="xp-desc">
+              first taste of the industry — kept the line moving during peak hours,
+              mastered speed, consistency, and the art of the perfect slice.
+            </p>
+            <div class="chips">
+              <span class="chip chip-sm">fast-paced</span>
+              <span class="chip chip-sm">teamwork</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="wave-sep ws-2" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C120,55 240,5 360,25 C480,45 600,10 720,28 C840,46 960,12 1080,30 C1200,48 1320,16 1440,32 L1440,60 L0,60 Z"/></svg>
+    </div>
+
+    <div class="band band-pink">
+      <section id="testimonials" class="section container">
+        <header class="section-head reveal" data-reveal>
+          <span class="sec-num" aria-hidden="true">03</span>
+          <span class="tag">( kind words )</span>
+          <h2>from the<br /><em class="circled">pass<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+          <p class="section-sub">what chefs, mentors &amp; teammates say about working with me.</p>
+          <span class="note note-receipts" aria-hidden="true">real receipts, promise</span>
+        </header>
+        <div class="t-slider reveal" id="tSlider" style="--d:.15s">
+          <div class="t-viewport">
+            <div class="t-track" id="tTrack">
+              <article class="t-card">
+                <span class="t-glyph" aria-hidden="true">&#8220;</span>
+                <div class="t-stars" aria-label="rated 5 out of 5">
+                  <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+                <blockquote>
+                  hammad shows up early, keeps his station spotless, and always asks
+                  the right questions. that kind of hunger is rare in a young cook.
+                </blockquote>
+                <footer>
+                  <span class="t-avatar">cm</span>
+                  <div>
+                    <strong>chef mentor</strong>
+                    <p>neapo gastronomia</p>
+                  </div>
+                </footer>
+              </article>
+
+              <article class="t-card">
+                <span class="t-glyph" aria-hidden="true">&#8220;</span>
+                <div class="t-stars" aria-label="rated 5 out of 5">
+                  <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+                <blockquote>
+                  fast hands, calm head. he kept our line moving through the busiest
+                  friday rushes without ever losing the smile.
+                </blockquote>
+                <footer>
+                  <span class="t-avatar">sl</span>
+                  <div>
+                    <strong>shift lead</strong>
+                    <p>14 street pizza co.</p>
+                  </div>
+                </footer>
+              </article>
+
+              <article class="t-card">
+                <span class="t-glyph" aria-hidden="true">&#8220;</span>
+                <div class="t-stars" aria-label="rated 5 out of 5">
+                  <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+                <blockquote>
+                  he treats every guest like they're the only table in the room.
+                  hospitality comes naturally to him.
+                </blockquote>
+                <footer>
+                  <span class="t-avatar">hi</span>
+                  <div>
+                    <strong>hospitality instructor</strong>
+                    <p>culinary arts program</p>
+                  </div>
+                </footer>
+              </article>
+            </div>
+          </div>
+          <div class="t-controls">
+            <button id="tPrev" aria-label="previous testimonial"><i data-lucide="arrow-left"></i></button>
+            <div class="t-dots" id="tDots"></div>
+            <button id="tNext" aria-label="next testimonial"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="wave-sep ws-3" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C120,55 240,5 360,25 C480,45 600,10 720,28 C840,46 960,12 1080,30 C1200,48 1320,16 1440,32 L1440,60 L0,60 Z"/></svg>
+    </div>
+
+    <section id="education" class="section container">
+      <header class="section-head reveal" data-reveal>
+        <span class="sec-num" aria-hidden="true">04</span>
+        <span class="tag">( the paperwork )</span>
+        <h2>school of<br /><em class="circled">flavor<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+      </header>
+      <div class="edu-grid">
+        <article class="edu-card reveal" style="--d:.05s">
+          <span class="xp-icon"><i data-lucide="graduation-cap"></i></span>
+          <div class="edu-info">
+            <span class="edu-year">2023 – 2024</span>
+            <h3>diploma</h3>
+            <p class="edu-field">hospitality, tourism management &amp; culinary arts</p>
+            <p class="edu-desc">the full package — front-of-house finesse, tourism know-how and serious kitchen skills rolled into one.</p>
+          </div>
+        </article>
+        <article class="edu-card reveal" style="--d:.15s">
+          <span class="xp-icon"><i data-lucide="croissant"></i></span>
+          <div class="edu-info">
+            <span class="edu-year">2021 – 2022</span>
+            <h3>intermediate</h3>
+            <p class="edu-field">culinary arts</p>
+            <p class="edu-desc">where the obsession started — foundations of cooking, food safety and classic techniques.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="wave-sep ws-4" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C120,55 240,5 360,25 C480,45 600,10 720,28 C840,46 960,12 1080,30 C1200,48 1320,16 1440,32 L1440,60 L0,60 Z"/></svg>
+    </div>
+
+    <div class="band band-beige">
+      <section id="skills" class="section container">
+        <header class="section-head reveal" data-reveal>
+          <span class="sec-num" aria-hidden="true">05</span>
+          <span class="tag">( what i bring )</span>
+          <h2>the<br /><em class="circled">toolkit<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+        </header>
+        <div class="skills-grid">
+          <div class="skill-card reveal" style="--d:0s"><i data-lucide="chef-hat"></i><h3>culinary arts</h3><p>classic techniques with a modern twist</p></div>
+          <div class="skill-card reveal" style="--d:.06s"><i data-lucide="concierge-bell"></i><h3>hospitality</h3><p>service that actually feels warm</p></div>
+          <div class="skill-card reveal" style="--d:.12s"><i data-lucide="utensils-crossed"></i><h3>prep &amp; plating</h3><p>clean knife skills, cleaner plates</p></div>
+          <div class="skill-card reveal" style="--d:.18s"><i data-lucide="pizza"></i><h3>italian cuisine</h3><p>trained in a legit gastronomia</p></div>
+          <div class="skill-card reveal" style="--d:.24s"><i data-lucide="users"></i><h3>customer service</h3><p>people leave happier than they came</p></div>
+          <div class="skill-card reveal" style="--d:.30s"><i data-lucide="heart-handshake"></i><h3>teamwork</h3><p>a line is only as strong as its crew</p></div>
+          <div class="skill-card reveal" style="--d:.36s"><i data-lucide="sparkles"></i><h3>presentation</h3><p>we eat with our eyes first</p></div>
+          <div class="skill-card reveal" style="--d:.42s"><i data-lucide="compass"></i><h3>tourism mgmt</h3><p>hospitality beyond the kitchen</p></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="marquee-wrap marquee-wrap-reverse" aria-hidden="true">
+      <div class="marquee marquee-accent">
+        <div class="marquee-track">
+          <span>say hi ✦ let's work ✦ say hi ✦ let's work ✦&nbsp;</span>
+          <span>say hi ✦ let's work ✦ say hi ✦ let's work ✦&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="band band-dark">
+      <section id="contact" class="section container">
+        <header class="section-head reveal" data-reveal>
+          <span class="sec-num" aria-hidden="true">06</span>
+          <span class="tag tag-dark">( say hi )</span>
+          <h2>let's cook<br /><em class="circled">something up.<svg class="circle-doodle" viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M28,46 C34,14 188,8 200,36 C210,64 66,86 24,64 C-4,48 52,16 152,18"/></svg></em></h2>
+          <p class="section-sub">got a kitchen that needs energy or an opportunity i should know about? my inbox is always hot.</p>
+          <span class="note note-inbox" aria-hidden="true">slide into my inbox
+            <svg viewBox="0 0 60 44" class="note-arrow"><path d="M10,4 C22,18 34,26 46,36"/><path d="M38,28 L47,37 L35,40"/></svg>
+          </span>
+        </header>
+        <div class="contact-grid">
+          <form class="contact-form reveal reveal-left" id="contactForm" action="https://formspree.io/f/mrpzdnbw" method="POST" novalidate>
+            <input type="text" name="_gotcha" hidden tabindex="-1" autocomplete="off" />
+            <div class="field-row">
+              <div class="field">
+                <label for="cfName">your name</label>
+                <input type="text" id="cfName" name="name" placeholder="jane doe" required />
+              </div>
+              <div class="field">
+                <label for="cfEmail">your email</label>
+                <input type="email" id="cfEmail" name="email" placeholder="jane@email.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="cfMsg">message</label>
+              <textarea id="cfMsg" name="message" rows="5" placeholder="let's open a restaurant together..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent">send message <i data-lucide="send"></i></button>
+            <p class="form-note">no spam, just hammad.</p>
+          </form>
+          <aside class="contact-info reveal reveal-right">
+            <h3>reach out direct</h3>
+            <a class="info-line" href="mailto:hammadakram058@gmail.com"><i data-lucide="mail"></i> hammadakram058@gmail.com</a>
+            <a class="info-line" href="tel:+923220307674"><i data-lucide="phone"></i> +92 322 0307674</a>
+            <div class="socials">
+              <a href="https://www.instagram.com/hammadakram_" target="_blank" rel="noopener" aria-label="instagram"><i data-lucide="instagram"></i></a>
+              <a href="https://www.linkedin.com/in/hammadakram23" target="_blank" rel="noopener" aria-label="linkedin"><i data-lucide="linkedin"></i></a>
+              <a href="https://wa.me/923220307674" target="_blank" rel="noopener" aria-label="whatsapp"><i data-lucide="message-circle"></i></a>
+            </div>
+            <div class="availability">
+              <span class="pulse-dot"></span>
+              currently open to internships &amp; junior roles
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer band-dark">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#hero">h<span>✦</span></a>
+        <p>crafted with butter, patience &amp; css.</p>
+      </div>
+      <nav class="footer-links" aria-label="footer navigation">
+        <a href="#about">about</a>
+        <a href="#experience">experience</a>
+        <a href="#education">education</a>
+        <a href="#skills">skills</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> hammad. all rights reserved.</p>
+      <button class="to-top" id="toTop"><i data-lucide="arrow-up"></i> back to top</button>
+    </div>
+  </footer>
+
+  <button class="fab" id="fab" aria-label="back to top"><i data-lucide="arrow-up"></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    

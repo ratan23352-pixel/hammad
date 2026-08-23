@@ -18,7 +18,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: var(--font-body);
@@ -26,6 +26,7 @@ body {
   color: var(--ink);
   line-height: 1.65;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 body.menu-open { overflow: hidden; }
 
@@ -91,7 +92,7 @@ section[id], main section { scroll-margin-top: 90px; }
   position: sticky; top: 0; z-index: 1000;
   transition: background 0.35s ease, box-shadow 0.35s ease;
 }
-.nav.scrolled { background: rgba(251, 248, 240, 0.88); backdrop-filter: blur(12px); box-shadow: 0 2px 0 var(--ink); }
+.nav.scrolled { background: rgba(251, 248, 240, 0.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 2px 0 var(--ink); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
 .logo { font-family: var(--font-display); font-weight: 900; font-size: 1.5rem; line-height: 1; }
 .logo span { color: var(--accent); }
@@ -151,7 +152,7 @@ section[id], main section { scroll-margin-top: 90px; }
 .eyebrow { font-weight: 700; letter-spacing: 0.18em; opacity: 0.7; margin-bottom: 1.25rem; }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
-  font-size: clamp(2.9rem, 11vw, 7.5rem);
+  font-size: clamp(2.4rem, 11.5vw, 7.5rem);
   line-height: 0.98; text-transform: uppercase; letter-spacing: -0.02em;
 }
 .hero h1 span { display: block; }
@@ -307,7 +308,7 @@ body.loaded .load-anim { opacity: 1; transform: translateY(0); }
 .xp-desc { margin-top: 1rem; max-width: 46rem; }
 
 .edu-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.75rem; margin-top: 3.5rem;
 }
 .edu-card {
@@ -396,10 +397,12 @@ body.loaded .load-anim { opacity: 1; transform: translateY(0); }
 .t-controls button:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); background: var(--pink); }
 .t-dots { display: flex; gap: 0.55rem; }
 .t-dot {
+  position: relative;
   width: 12px; height: 12px; border-radius: 50%; padding: 0;
   border: 2px solid var(--ink); background: transparent; cursor: pointer;
   transition: background 0.25s ease, transform 0.25s ease;
 }
+.t-dot::before { content: ""; position: absolute; inset: -12px; border-radius: 50%; }
 .t-dot.active { background: var(--ink); transform: scale(1.15); }
 
 @media (max-width: 820px) {
@@ -460,6 +463,25 @@ body.loaded .load-anim { opacity: 1; transform: translateY(0); }
   border-top: 1px solid rgba(251, 248, 240, 0.15); padding-block: 1.4rem;
 }
 .footer-bottom p { font-size: 0.9rem; opacity: 0.55; }
+
+.dev-credit {
+  border-top: 1px solid rgba(251, 248, 240, 0.15);
+  padding-block: 1.4rem;
+  text-align: center;
+}
+.dev-credit p {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 0.35rem 0.65rem;
+  font-size: 0.92rem; opacity: 0.85;
+}
+.dev-credit a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  color: var(--pink-deep); font-weight: 700;
+  transition: color 0.2s ease, translate 0.2s ease;
+}
+.dev-credit a:hover { color: var(--accent); translate: 0 -2px; }
+.dev-credit a svg.lucide { width: 0.95em; height: 0.95em; }
+.dev-sep { color: var(--pistachio); opacity: 0.7; }
 .to-top {
   display: inline-flex; align-items: center; gap: 0.45rem;
   background: none; border: none; font-weight: 700; font-size: 0.95rem;
@@ -557,6 +579,20 @@ body.loaded .load-anim { opacity: 1; transform: translateY(0); }
   .timeline { padding-left: 1.75rem; }
   .xp-card::before { left: calc(-1.75rem + 2px); }
   .footer-inner, .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .toast { bottom: calc(1.5rem + 52px + 1rem); }
+}
+
+@media (max-width: 400px) {
+  .container { padding-inline: 1.15rem; }
+  .section { padding-block: 3.5rem; }
+  .stat { min-width: 108px; padding: 0.85rem 1.1rem; }
+  .stat strong { font-size: 1.6rem; }
+  .xp-card { padding: 1.3rem 1.2rem; }
+  .t-card { padding: 1.5rem 1.4rem 1.4rem; }
+  .edu-card { padding: 1.4rem 1.2rem; gap: 1rem; }
+  .skill-card { padding: 1.3rem 1.2rem; }
+  .hero-sub { font-size: 1.05rem; }
+  .hero-cta .btn { padding-inline: 1.25rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
